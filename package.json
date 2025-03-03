@@ -1,0 +1,24 @@
+{
+  "name": "tarea_3",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "start": "node index.js",
+    "migrations:generate": "sequelize-cli migration:generate --name",
+    "migration:run": "sequelize-cli db:migrate",
+    "migration:undo": "sequelize-cli db:migrate:undo",
+    "migration:delete": "sequelize-cli db:migrate:undo:all"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "boom": "^7.3.0",
+    "express": "^4.21.2",
+    "joi": "^17.13.3",
+    "pg": "^8.13.3",
+    "sequelize": "^6.37.5"
+  }
+}
