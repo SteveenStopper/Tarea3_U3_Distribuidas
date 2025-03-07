@@ -1,20 +1,29 @@
 const Joi = require('joi');
 
 const id = Joi.number().integer();
-const nombre = Joi.string().min(3).max(50);
-const fecha = Joi.date();
-const lugar = Joi.string().min(3).max(50);
+const name = Joi.string().max(100).required();
+const description = Joi.string().max(255).required();
+const date = Joi.date().required();
+const capacity = Joi.number().integer().required();
+const createdAt = Joi.date();
+const updatedAt = Joi.date();
 
 const createEventoSchema = Joi.object({
-    nombre: nombre.required(),
-    fecha: fecha.required(),
-    lugar: lugar.required()
+    name,
+    description,
+    date,
+    capacity,
+    createdAt,
+    updatedAt
 });
 
 const updateEventoSchema = Joi.object({
-    nombre: nombre,
-    fecha: fecha,
-    lugar: lugar
+    name,
+    description,
+    date,
+    capacity,
+    createdAt,
+    updatedAt
 });
 
 const getEventoSchema = Joi.object({
