@@ -1,3 +1,4 @@
+const { date } = require('joi');
 const { Model, DataTypes } = require('sequelize');
 const Evento_Table = 'evento';
 
@@ -7,18 +8,30 @@ const EventoSchema = {
         primaryKey: true,
         autoIncrement: true
     },
-    nombre: {
+    name: {
         type: DataTypes.STRING,
         allowNull: false
     },
-    fecha: {
+    description: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    date: {
         type: DataTypes.DATE,
         allowNull: false
     },
-    lugar: {
-        type: DataTypes.STRING,
+    capacity: {
+        type: DataTypes.INTEGER,
         allowNull: false
     },
+    createdAt: {
+        type: DataTypes.DATE,
+        allowNull: false
+    },
+    updatedAt: {
+        type: DataTypes.DATE,
+        allowNull: false
+    }
 };
 
 class Evento extends Model {
